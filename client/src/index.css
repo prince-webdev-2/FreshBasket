@@ -1,0 +1,10 @@
+/* Google font outfit */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/* tailwindcss import */
+@import "tailwindcss";
+
+/* set font for all text in web */
+*{
+  font-family: "Outfit", sans-serif;
+}
