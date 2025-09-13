@@ -7,4 +7,8 @@
 /* set font for all text in web */
 *{
   font-family: "Outfit", sans-serif;
+  box-sizing: border-box;
 }
+
+/* adding class :dark prefix */
+@custom-variant dark (&:where(.dark, .dark *));
