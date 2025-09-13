@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'  
 import HomePage from './pages/HomePage';
 import { Route, Routes, useLocation } from 'react-router-dom';
+import {Toaster} from 'react-hot-toast';
+import Footer from './components/Footer';
 
 function App() {
   // variable to track user/seller
@@ -30,11 +32,13 @@ function App() {
   return (
     <div className='dark:bg-[black] bg-[white]'>
       {isSellerPath ? null : <Navbar theme={theme} setTheme={setTheme} activeMenu={activeMenu} setActiveMenu={setActiveMenu} />}
+      <Toaster />
       <div className='py-5'>
         <Routes>
-          <Route path='/' element={<HomePage />} />
+          <Route path='/' element={<HomePage theme={theme} />} />
         </Routes>
-      </div>      
+      </div>  
+      {isSellerPath ? null : <Footer />}    
     </div>
   )
 }
