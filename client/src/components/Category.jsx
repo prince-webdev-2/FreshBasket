@@ -5,7 +5,7 @@ import { useAppContext } from '../context/AppContext'
 function Category() {
   const {navigate}= useAppContext();
   return (
-    <div className='sm:w-[90%] sm:ms-[5%] pt-5'>
+    <div className='sm:w-[90%] sm:ms-[5%] max-sm:px-3 pt-5'>
         <h2 className='text-black dark:text-white mb-4 text-2xl sm:text-3xl tracking-[5px] cursor-default'>Categories</h2>
         <div className='grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4'>
                 {categories.map((item,index)=>(

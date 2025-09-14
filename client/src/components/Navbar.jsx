@@ -5,7 +5,7 @@ import asserts from '../assets/assets.js';
 
 function Navbar({theme, setTheme, activeMenu, setActiveMenu}) {
         // get usestate from context
-        const {user, setUser}= useAppContext();
+        const {user, setUser, setShowLogin}= useAppContext();
 
         const [open, setOpen] = React.useState(false);
   return (
@@ -44,7 +44,7 @@ function Navbar({theme, setTheme, activeMenu, setActiveMenu}) {
                         </div>
                     </div>
                     :
-                    <button className="cursor-pointer px-8 py-2 bg-[#eb7220] hover:bg-[red] transition text-white rounded-full" onClick={()=>setUser('Prince')}>
+                    <button className="cursor-pointer px-8 py-2 bg-[#eb7220] hover:bg-[red] transition text-white rounded-full" onClick={()=>setShowLogin(true)}>
                         Login
                     </button>
                 }
@@ -72,7 +72,7 @@ function Navbar({theme, setTheme, activeMenu, setActiveMenu}) {
                 }
                 <NavLink to={'/'} onClick={()=>setOpen(false)} className='text-[#000000bf] hover:text-[#000] dark:text-[#ffffff95] dark:hover:text-[white]' >Orders</NavLink>
                 <NavLink to={'/contact'} onClick={()=>setOpen(false)} className='text-[#000000bf] hover:text-[#000] dark:text-[#ffffff95] dark:hover:text-[white]' >Contact</NavLink>
-                <NavLink to={'/'} onClick={()=>{setOpen(false);setUser(user? null : 'prince')}} className='text-[#000000bf] hover:text-[#000] dark:text-[#ffffff95] dark:hover:text-[white]' >{user ? 'Log out' : 'Log in'}</NavLink>                
+                <NavLink to={'/'} onClick={()=>{setOpen(false);setShowLogin(true)}} className='text-[#000000bf] hover:text-[#000] dark:text-[#ffffff95] dark:hover:text-[white]' >{user ? 'Log out' : 'Log in'}</NavLink>                
             </div>
         </nav>
   )

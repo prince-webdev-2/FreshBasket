@@ -5,6 +5,11 @@
 @import "tailwindcss";
 
 /* set font for all text in web */
+
+/* adding scroll smooth for web */
+html{
+  scroll-behavior: smooth;
+}
 *{
   font-family: "Outfit", sans-serif;
   box-sizing: border-box;
@@ -12,3 +17,4 @@
 
 /* adding class :dark prefix */
 @custom-variant dark (&:where(.dark, .dark *));
+

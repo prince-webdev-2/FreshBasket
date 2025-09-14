@@ -3,12 +3,12 @@ import asserts, { whyUs } from '../assets/assets'
 
 function HeroDiv2({theme}) {
   return (
-    <div className='sm:w-[90%] sm:ms-[5%] py-5'>
+    <div className='sm:w-[90%] max-sm:px-3 sm:ms-[5%] py-5'>
         <div className='grid grid-cols-1 sm:grid-cols-2 '>
                 <div className='max-sm:mb-4'>
                         <img className='w-[30rem]' src={`${theme==='dark' ? asserts.hero2white : asserts.hero2black}`} alt="hero-div-img" />
                 </div>
-                <div className='bg-[#cccccc38] dark:bg-black rounded-md max-sm:px-3 py-5 sm:px-15'>
+                <div className='bg-[#cccccc38] dark:bg-black rounded-md py-5 sm:px-15'>
                         <h2 className='text-black dark:text-white mb-4 text-2xl sm:text-3xl tracking-[5px] cursor-default'>What Sets Us Apart</h2>
                         <div>
                                 {whyUs.map((item,index)=>(

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 function HeroDiv1() {
   return (
-    <div className='max-sm:h-[20rem] h-[35rem] sm:w-[90%] sm:ms-[5%] rounded-2xl relative'>
+    <div className='max-sm:h-[20rem] max-sm:px-2 h-[35rem] sm:w-[90%] sm:ms-[5%] rounded-2xl relative'>
         <img src={asserts.heroDiv1} alt="heroDiv1" className='w-full h-full rounded-2xl' />
         <div className='absolute max-sm:top-[60%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
                 <h1 className='text-2xl md:text-4xl lg:text-5xl font-bold cursor-default'>Freshness with every bite, savings with every cart</h1>

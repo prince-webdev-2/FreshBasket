@@ -4,6 +4,8 @@ import HomePage from './pages/HomePage';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import {Toaster} from 'react-hot-toast';
 import Footer from './components/Footer';
+import { useAppContext } from './context/AppContext';
+import Login from './components/Login';
 
 function App() {
   // variable to track user/seller
@@ -12,6 +14,8 @@ function App() {
   let [theme, setTheme]= useState(localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light');
   // useState for menu active class
   let [activeMenu, setActiveMenu]= useState('Home');
+  // getting useState from context
+  const {showLogin, setShowLogin}= useAppContext();
 
   // update theme using useEffect
   useEffect(()=>{
@@ -32,6 +36,7 @@ function App() {
   return (
     <div className='dark:bg-[black] bg-[white]'>
       {isSellerPath ? null : <Navbar theme={theme} setTheme={setTheme} activeMenu={activeMenu} setActiveMenu={setActiveMenu} />}
+      {showLogin && <Login />}
       <Toaster />
       <div className='py-5'>
         <Routes>
