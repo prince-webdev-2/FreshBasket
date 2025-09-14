@@ -2,7 +2,7 @@ import React from 'react'
 
 function NewsLetter() {
   return (
-    <div className="flex flex-col items-center w-full max-w-5xl lg:w-full rounded-2xl px-4 md:py-16 mx-2 lg:mx-auto max-sm:my-2 my-10ge bg-gray-900 text-white">
+    <div className="flex flex-col items-center w-fit max-w-5xl sm:w-full rounded-2xl px-4 py-8 md:py-16 mx-2 sm:mx-auto max-sm:my-2  bg-gray-900 text-white">
             <div className="flex flex-col justify-center items-center text-center">
                 <h1 className="text-4xl md:text-[40px]">Never Miss a Deal !</h1>
                 <p className="text-sm md:text-base text-gray-500/90 mt-2 max-w-xl">Subscribe to get the latest offers, new arrivals, and exclusive discounts</p>

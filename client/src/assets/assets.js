@@ -110,6 +110,38 @@ export const whyUs= [
         }
 ];
 
+export const footerLinks = [
+  {
+    title: 'Quick Links',
+    links: [
+      { text: 'Home', url: '#' },
+      { text: 'Best Sellers', url: '#' },
+      { text: 'Offers & Deals', url: '#' },
+      { text: 'Contact Us', url: '#' },
+      { text: 'FAQs', url: '#' },
+    ]
+  },
+  {
+    title: 'Need help?',
+    links: [
+      { text: 'Delivery information', url: '#' },
+      { text: 'Return & Refund Policy', url: '#' },
+      { text: 'Payment Methods', url: '#' },
+      { text: 'Track your Orders', url: '#' },
+      { text: 'Contact Us', url: '#' },
+    ]
+  },
+  {
+    title: 'Follow Us',
+    links: [
+      { text: 'Instagram', url: '#' },
+      { text: 'Twitter', url: '#' },
+      { text: 'Facebook', url: '#' },
+      { text: 'YouTube', url: '#' }
+    ]
+  }
+];
+
 export const dummyProducts = [
   // ================= Fruits =================
   {
