@@ -6,11 +6,24 @@ const Login = () => {
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
         // get setShowLogin from context
-        const {setShowLogin}= useAppContext();   
+        const {setShowLogin, setUser}= useAppContext();  
+        
+        // setting form submit function
+        const onSubmitHandler= async(event)=> {
+                event.preventDefault();
+                setUser(
+                        {
+                                name: 'Prince Kumar',
+                                email: 'prince@gmail.com',
+                                password: 'Prince@7870'
+                        }
+                )
+                setShowLogin(false)
+        }
 
     return (
         <div className="fixed z-50 left-1/2 top-[10rem] transform -translate-x-1/2 bg-[white] dark:bg-[black] rounded-xl">
-                <form className="flex flex-col gap-4 m-auto items-start p-8 py-10 w-80 sm:w-[352px] dark:text-[white] text-[black] shadow-xl">
+                <form onSubmit={onSubmitHandler} className="flex flex-col gap-4 m-auto items-start p-8 py-10 w-80 sm:w-[352px] dark:text-[white] text-[black] shadow-xl">
                         <div className="flex w-full items-center justify-between">
                                 <p className="text-3xl font-semibold tracking-[3px]">
                                         <span className="text-[black] dark:text-[white]">User</span><span className="text-[red]"> {state === "login" ? "Login" : "Sign Up"}</span>

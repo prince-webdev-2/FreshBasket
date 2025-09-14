@@ -1,12 +1,31 @@
-import React from "react";
-import { useAppContext } from "../context/AppContext";
-const ProductCart = ({product}) => {
-    const [count, setCount] = React.useState(0);
-    const {currency, addToCart, removeFromCart, cartItems, navigate}= useAppContext();
+import React, { useEffect } from 'react'
+import { useAppContext } from '../context/AppContext'
+import ProductCart from '../components/ProductCart';
 
-    
-    return(
-        <div onClick={()=>navigate(`/products/${product.category.toLowerCase()}/${product._id}`)} className="border border-gray-500/20  dark:border-white rounded-md px-4 py-8 bg-white dark:bg-black hover:scale-105 duration-300 group cursor-pointer">
+function products() {
+        const {currency, addToCart, removeFromCart, cartItems,products,setProducts, navigate, searchItem}= useAppContext();
+
+
+        const fetchProducts = async () => {
+    setProducts(dummyProducts);
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, [searchItem]);
+  return (
+    <div className='sm:w-[90%] sm:ms-[5%] max-sm:px-3 pt-5'>
+        <div>
+          <button type='button' className='fixed max-sm:text-xl text-4xl max-sm:h-10 h-16 max-sm:w-10 w-16 text-[white] bg-amber-500 z-30 right-3 bottom-12 rounded-full cursor-pointer animate-bounce' onClick={()=>scrollTo(0,0)}><i className="fa-solid fa-angle-up"></i></button>
+        </div>
+        <h2 className='text-black dark:text-white  text-2xl sm:text-3xl tracking-[5px] cursor-default'>All products</h2><hr className='mb-5 sm:mb-10 w-[5rem] border border-[red] ms-[110px] sm:ms-[130px]' />
+        <div className='grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4'>
+                {products.filter((product) => product.inStock)
+          .filter((product) =>
+            product.name.toLowerCase().includes(searchItem.toLowerCase()) ||
+            product.category.toLowerCase().includes(searchItem.toLowerCase())
+          ).map((product,index)=>(
+                   <div onClick={()=> navigate(`/products/${product.category.toLowerCase()}/${product._id}`)} className="border border-gray-500/20  dark:border-white rounded-md px-4 py-8 bg-white dark:bg-black hover:scale-105 duration-300 group cursor-pointer">
             <div className="group cursor-pointer flex items-center justify-center px-2">
                 <img className="transition rounded-full h-22 w-22 group-hover:scale-110 duration-300" src={product.image[0]} alt={product.name} />
             </div>
@@ -53,8 +72,11 @@ const ProductCart = ({product}) => {
                     </div>
                 </div>
             </div>
+        </div>    
+                ))}
         </div>
-    );
-};
+    </div>
+  )
+}
 
-export default ProductCart;
+export default products

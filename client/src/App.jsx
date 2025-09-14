@@ -6,6 +6,10 @@ import {Toaster} from 'react-hot-toast';
 import Footer from './components/Footer';
 import { useAppContext } from './context/AppContext';
 import Login from './components/Login';
+import Products from './pages/Products';
+import ProductCategory from './pages/ProductCategory';
+import ScrollToTop from './ScrollToTop';
+import ProductDetails from './pages/ProductDetails';
 
 function App() {
   // variable to track user/seller
@@ -39,8 +43,12 @@ function App() {
       {showLogin && <Login />}
       <Toaster />
       <div className='py-5'>
+        <ScrollToTop />
         <Routes>
           <Route path='/' element={<HomePage theme={theme} />} />
+          <Route path='/products' element={<Products />} />
+          <Route path='/products/:category' element={<ProductCategory />} />
+          <Route path='/products/:category/:id' element={<ProductDetails />} />
         </Routes>
       </div>  
       {isSellerPath ? null : <Footer />}    

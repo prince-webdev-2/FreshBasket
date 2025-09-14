@@ -13,6 +13,7 @@ export const AppContextProvider= ({children})=>{
         const [showLogin, setShowLogin]= useState(false)
         const [products, setProducts]= useState([])
         const [cartItems, setCartItems]= useState({})
+        const [searchItem, setSearchItem]= useState('');
 
         // fetch all products
         const fetchProducts= async()=>{
@@ -57,8 +58,23 @@ export const AppContextProvider= ({children})=>{
                 fetchProducts()
         },[])
 
+        // total cart items
+        const countCart = Object.values(cartItems).reduce((acc, curr) => acc + curr, 0);
 
-        const value= {navigate, user, setUser, isSeller, setIsSeller,products,currency,cartItems, addToCart,setCartItems,updateCartItem,removeFromCart,showLogin, setShowLogin}
+        // total amount in cart items
+        const cartTotalAmount= () =>{
+                let totalAmount=0;
+                for(const items in cartItems){
+                        let itemInfo= products.find((product)=> product._id === items);
+                        if(cartItems[items]>0){
+                                totalAmount+=itemInfo.offerPrice* cartItems[items];
+                        }
+                }
+                return Math.floor(totalAmount * 100)/100;
+        }
+
+
+        const value= {navigate, user, setUser, isSeller, setIsSeller,products,currency,cartItems, addToCart,setCartItems,updateCartItem,removeFromCart,showLogin, setShowLogin,searchItem, setSearchItem,countCart,cartTotalAmount}
 
         return <AppContext.Provider value={value}>
                 {children}
