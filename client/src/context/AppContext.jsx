@@ -1,4 +1,5 @@
 import { Children, createContext, useContext, useEffect, useState } from "react";
+
 import { useNavigate } from "react-router-dom";
 import { dummyProducts } from "../assets/assets";
 import toast from "react-hot-toast";
@@ -6,7 +7,7 @@ import toast from "react-hot-toast";
 export const AppContext= createContext();
 
 export const AppContextProvider= ({children})=>{
-        const currency= import.meta.VITE_CURRENCY;
+        const currency = import.meta.env.VITE_CURRENCY;
         const navigate= useNavigate();
         const [user, setUser]= useState(null);
         const [isSeller, setIsSeller]= useState(false);
@@ -14,6 +15,7 @@ export const AppContextProvider= ({children})=>{
         const [products, setProducts]= useState([])
         const [cartItems, setCartItems]= useState({})
         const [searchItem, setSearchItem]= useState('');
+        const [userAddress, setUserAddress]= useState('Ranchi Jharkhand')
 
         // fetch all products
         const fetchProducts= async()=>{
@@ -74,7 +76,7 @@ export const AppContextProvider= ({children})=>{
         }
 
 
-        const value= {navigate, user, setUser, isSeller, setIsSeller,products,currency,cartItems, addToCart,setCartItems,updateCartItem,removeFromCart,showLogin, setShowLogin,searchItem, setSearchItem,countCart,cartTotalAmount}
+        const value= {navigate, user, setUser, isSeller, setIsSeller,products,currency,cartItems, addToCart,setCartItems,updateCartItem,removeFromCart,showLogin, setShowLogin,searchItem, setSearchItem,countCart,cartTotalAmount, userAddress, setUserAddress}
 
         return <AppContext.Provider value={value}>
                 {children}

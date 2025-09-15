@@ -31,7 +31,7 @@ function Navbar({theme, setTheme, activeMenu, setActiveMenu}) {
 
                 <div className="relative cursor-pointer" onClick={()=> navigate('/cart')}>
                     <i className="fa-solid fa-cart-shopping text-2xl text-[#000000d1] dark:text-white"></i>
-                    <button className="absolute -top-2 -right-3 text-xs text-white bg-[red] w-[18px] h-[18px] rounded-full">{countCart}</button>
+                    <button className="absolute -top-2 -right-3 text-xs text-white bg-[red] w-[18px] h-[18px] rounded-full cursor-pointer">{countCart}</button>
                 </div>
 
                 {user ?
