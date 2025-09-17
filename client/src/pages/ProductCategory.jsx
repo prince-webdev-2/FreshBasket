@@ -15,7 +15,7 @@ function ProductCategory() {
         {searchCategory && (
                 <div>
                         <div>
-                                <button type='button' className='fixed max-sm:text-xl text-4xl max-sm:h-10 h-16 max-sm:w-10 w-16 text-[white] bg-amber-500 z-30 right-3 bottom-12 rounded-full cursor-pointer animate-bounce' onClick={()=>scrollTo(0,0)}><i className="fa-solid fa-angle-up"></i></button>
+                                <button type='button' className='fixed max-sm:text-xl text-4xl max-sm:h-10 h-16 max-sm:w-10 w-16 text-[white] bg-black dark:text-[black] dark:bg-white right-3 bottom-12 rounded-full cursor-pointer animate-bounce' onClick={()=>scrollTo(0,0)}><i className="fa-solid fa-angle-up"></i></button>
                         </div>
                         <div>
                                 <h2 className='text-black dark:text-white  text-2xl sm:text-3xl tracking-[5px] cursor-default'>{searchCategory.text.toUpperCase()}</h2>

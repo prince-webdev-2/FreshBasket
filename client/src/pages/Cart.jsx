@@ -1,71 +1,154 @@
-import React from 'react'
-import { useAppContext } from '../context/AppContext'
+import React, { useEffect, useState } from "react"
+import { useAppContext } from "../context/AppContext"
+import { categories } from "../assets/assets";
+const Cart = () => {
+    const [showAddress, setShowAddress] = React.useState(false)
 
-function Cart() {
-        const {cartItems, countCart, userAddress, currency, cartTotalAmount}= useAppContext();
-        const [isOpen, setIsOpen] = React.useState(false);
-        const [selected, setSelected] = React.useState("Select");
+    const {cartTotalAmount, userAddress, currency, countCart,cartItems, removeFromCart, navigate, products, paymentType, setPaymentType}= useAppContext();
 
-        const paymentType = ['Cash on Delivery', 'UPI Payment'];
-        const handleSelect = (type) => {
-                setSelected(type);
-                setIsOpen(false);
-        };
-  return (
-    <div className='sm:w-[90%] sm:ms-[5%] max-sm:px-3 pt-5'>
-        <div>
-          <button type='button' className='fixed max-sm:text-xl text-4xl max-sm:h-10 h-16 max-sm:w-10 w-16 text-[white] bg-amber-500 z-30 right-3 bottom-12 rounded-full cursor-pointer animate-bounce' onClick={()=>scrollTo(0,0)}><i className="fa-solid fa-angle-up"></i></button>
-        </div>
-        <h2 className='text-black dark:text-white  text-2xl sm:text-3xl tracking-[5px] cursor-default'>Shopping Cart<span className='text-[red] text-sm tracking-normal'>{countCart} items</span></h2>
-        {/* cart items table */}
-        <div className='sm:grid lg:grid-cols-[60%_40%] grid-cols-1 gap-4'>
-                <div>products</div>
-                <div className='py-8 px-6 bg-[#cccccc46] dark:bg-[black] dark:border-1 rounded-md dark:border-white dark:shadow-white dark:shadow-md cursor-default'>
-                        <h4 className='text-2xl font-semibold dark:text-white'>Order Summary</h4> <hr className='my-4 dark:border-white' />
-                        <h2 className='text-md font-semibold text-[#000000b2] dark:text-[#ffffffb0]'>DELIVERY ADDRESS</h2>
-                        <p className='text-[#06b806] text-sm mt-1 mb-5'>{userAddress}</p>
-                        <h2 className='text-md font-semibold text-[#000000b2] dark:text-[#ffffffb0]'>PAYMENT MODE</h2>
-                        <div className="flex flex-col w-full text-sm relative mt-2 mb-5 cursor-pointer">
-                                <button type="button" onClick={() => setIsOpen(!isOpen)}
-                                className="w-full text-left sm:py-4 lg:py-2 px-4 pr-2 py-2 border rounded bg-white text-gray-800 border-gray-300 shadow-sm hover:bg-gray-50 focus:outline-none cursor-pointer">
-                                        <span>{selected}</span>
-                                        <svg className={`w-5 h-5 inline float-right transition-transform duration-200 ${isOpen ? "rotate-0" : "-rotate-90"}`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#6B7280" >
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                </button>
-                                {isOpen && (
-                                        <ul className="w-full bg-white border border-gray-300 rounded shadow-md mt-1 py-2 absolute top-10 sm:top-15 lg:top-10">
-                                                {paymentType.map((type, index) => (
-                                                        <li key={index} className="px-4 py-2 hover:bg-indigo-500 hover:text-white cursor-pointer" onClick={() => handleSelect(type)} >
-                                                                {type}
-                                                        </li>
-                                                ))}
-                                        </ul>
-                                )}
-                        </div> <hr className='my-4 dark:border-white' />
-                        <div>
-                                <div className='flex justify-between items-center'>
-                                        <p className='text-[#000000b2] dark:text-[#ffffffb0]'>Price</p>
-                                        <p className='text-black dark:text-white'>{currency}{cartTotalAmount()}</p>                          
-                                </div>
-                                <div className='flex justify-between items-center'>
-                                        <p className='text-[#000000b2] dark:text-[#ffffffb0]'>Shipping Fee</p>
-                                        <p className='text-[#06b806]'>Free</p>                          
-                                </div>
-                                <div className='flex justify-between items-center mb-3'>
-                                        <p className='text-[#000000b2] dark:text-[#ffffffb0]'>Tax(2%)</p>
-                                        <p className='text-black dark:text-white'>{currency} {(cartTotalAmount() * 0.02).toFixed(2)}</p>                          
-                                </div>
-                                <div className='flex justify-between items-center'>
-                                        <p className='text-black dark:text-white'>Total Amount:</p>
-                                        <p className='text-xl text-[red]'>{currency} {(cartTotalAmount() + cartTotalAmount() * 0.02).toFixed(2)}</p>                          
-                                </div>
-                        </div>
-                        <button type='button' className='py-3 sm:py-5 lg:py-3 text-white rounded-md mt-7 font-semibold w-full bg-[#06b806] cursor-pointer hover:bg-[green] duration-300 sm:text-xl lg:text-sm'>Place Order</button>
+    // set final cart array
+    const [cartList, setCartList]= useState([]);
+    const getCart= ()=> {
+        let tempArray=[];
+        for(const key in cartItems){
+            const product= products.find((item)=>item._id===key);
+            product.quantity=cartItems[key];
+            tempArray.push(product);
+        }
+        setCartList(tempArray);
+    }
+
+    const placeOrder= async ()=>{
+
+    }
+
+    useEffect(()=>{
+        if(products.length > 0 && cartItems){
+            getCart();
+        }
+    },[products, cartItems])
+
+    
+    return cartList.length > 0 ?(
+        
+        <div className="flex flex-col md:flex-row gap-4 mt-5 sm:mt-16 max-w-6xl w-full px-6 mx-auto">
+            <div>
+                <button type='button' className='fixed max-sm:text-xl text-4xl max-sm:h-10 h-16 max-sm:w-10 w-16 text-[white] bg-black dark:text-[black] dark:bg-white z-30 right-3 bottom-12 rounded-full cursor-pointer animate-bounce' onClick={()=>scrollTo(0,0)}><i className="fa-solid fa-angle-up"></i></button>
+            </div>
+            <div className='flex-1 max-w-4xl overflow-auto h-[60vh] scrollbar-hide'>
+                <h1 className="text-3xl font-medium mb-6 text-black dark:text-white">
+                Shopping Cart <span className="text-sm text-[red]">{countCart}</span>
+            </h1>
+                <div className="grid grid-cols-[2fr_1fr_1fr] max-sm:mt-10 text-gray-500 text-base font-medium pb-3">
+                    <p className="text-left">Product Details</p>
+                    <p className="text-center">Subtotal</p>
+                    <p className="text-center">Action</p>
                 </div>
+
+                {cartList.map((product, index) => (
+                    <div key={index} className="grid grid-cols-[2fr_1fr_1fr] text-gray-500 items-center text-sm md:text-base font-medium py-3  sm:hover:bg-[#ccc] px-2 duration-300 rounded-xl group border-2 dark:border-[white] border-[black] mb-3">
+                        <div className="flex items-center md:gap-6 gap-3">
+                            <div className="cursor-pointer w-24 h-24 flex items-center justify-center rounded-full overflow-hidden">
+                                <img className="max-w-full h-full object-cover rounded-full" src={product.image} alt={product.name} onClick={()=>navigate(`/products/${product.category.toLowerCase()}/${product._id}`)} />
+                            </div>
+                            <div>
+                                <p className="hidden md:block font-semibold group-hover:text-black">{product.name}</p>
+                                <div className="font-normal text-gray-500/70">
+                                    <div className='flex items-center'>
+                                        <p className=" group-hover:text-black">Qty: {cartItems[product._id]}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p className="text-center group-hover:text-black">${product.offerPrice * product.quantity}</p>
+                        <button className="cursor-pointer mx-auto" onClick={()=>removeFromCart(product._id)}>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="m12.5 7.5-5 5m0-5 5 5m5.833-2.5a8.333 8.333 0 1 1-16.667 0 8.333 8.333 0 0 1 16.667 0" stroke="#FF532E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </button>
+                    </div>)
+                )}
+
+                <button className="group cursor-pointer flex items-center mt-8 gap-2 text-indigo-500 font-medium" onClick={()=>navigate('/products')}>
+                    <svg width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.09 5.5H1M6.143 10 1 5.5 6.143 1" stroke="#615fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    Continue Shopping
+                </button>
+
+            </div>
+
+            <div className="max-w-[360px] w-full bg-[#cccccc58] dark:bg-[black] p-5 max-md:mt-16 border-2 dark:border-white border-gray-300/70 rounded-2xl">
+                <h2 className="text-xl md:text-xl font-medium dark:text-white cursor-default">Order Summary</h2>
+                <hr className="border-[black] dark:border-[white] my-5" />
+
+                <div className="mb-6">
+                    <p className="text-sm font-medium uppercase dark:text-[#ffffffc2]">Delivery Address</p>
+                    <div className="relative flex justify-between items-start mt-2">
+                        <p className="text-gray-500"> {userAddress} </p>
+                        <button onClick={() => setShowAddress(!showAddress)} className="text-indigo-500 hover:underline cursor-pointer">
+                            Change
+                        </button>
+                        {showAddress && (
+                            <div className="absolute top-12 py-1 bg-white border border-gray-300 text-sm w-full">
+                                <p onClick={() => setShowAddress(false)} className="text-gray-500 p-2 hover:bg-gray-100">
+                                    New York, USA
+                                </p>
+                                <p onClick={() => setShowAddress(false)} className="text-indigo-500 text-center cursor-pointer p-2 hover:bg-indigo-500/10">
+                                    Add address
+                                </p>
+                            </div>
+                        )}
+                    </div>
+
+                    <p className="text-sm font-medium uppercase mt-6">Payment Method</p>
+
+                    <select className="w-full border border-gray-300 bg-white px-3 py-2 mt-2 outline-none" onChange={(e) => setPaymentType(e.target.value)}>
+                        <option value="COD">Cash On Delivery</option>
+                        <option value="Online">Online Payment</option>
+                    </select>
+                </div>
+
+                <hr className="border-gray-300" />
+
+                <div className="text-gray-500 mt-4 space-y-2">
+                    <p className="flex justify-between dark:text-[#ffffffc2]">
+                        <span>Price</span><span>{currency}{cartTotalAmount()}</span>
+                    </p>
+                    <p className="flex justify-between dark:text-[#ffffffc2]">
+                        <span>Shipping Fee</span><span className="text-green-600">Free</span>
+                    </p>
+                    <p className="flex justify-between dark:text-[#ffffffc2]">
+                        <span>Tax (2%)</span><span>{currency}{(0.02 * cartTotalAmount()).toFixed(2)}</span>
+                    </p>
+                    <p className="flex justify-between text-lg font-medium mt-3 dark:text-[#ffffffc2]">
+                        <span>Total Amount:</span>{currency}{(cartTotalAmount() + (0.02 * cartTotalAmount())).toFixed(2)}
+                    </p>
+                </div>
+
+                <button className="w-full py-3 mt-6 cursor-pointer bg-[#008000aa] text-white font-medium hover:bg-[green] transition duration-300 rounded-md" onClick={placeOrder}>
+                    {paymentType=== 'COD' ? 'Place Order' : 'Proceed to Checkout'}
+                </button>
+            </div>
+        </div>
+    ) : 
+    <div className="flex flex-col md:flex-row pt-10 max-sm:text-center sm:pt-16 max-w-6xl w-full px-6 mx-auto">
+        <div className='flex-1'>
+            <h1 className="text-3xl font-medium mb-6 sm:mb-20 text-black dark:text-white">
+                Shopping Cart <span className="text-sm text-[red]">{countCart}</span>
+            </h1>
+            <div className="w-full max-sm:h-[43vh] sm:h-[40vh] lg:h-[25vh]">
+                <h2 className="text-xl text-center font-medium max-sm:mt-10 dark:text-white">Your cart is empty</h2>
+                <p className="text-sm text-center mt-2 dark:text-[#ffffffab]">Looks like you haven’t added anything yet.</p>
+                <button className="ms-[50%] transform -translate-x-1/2 group cursor-pointer flex items-center mt-12 gap-2 text-indigo-500 font-medium" onClick={()=>navigate('/products')}>
+                    <svg width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.09 5.5H1M6.143 10 1 5.5 6.143 1" stroke="#615fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    Continue Shopping
+                </button>
+            </div>
         </div>
     </div>
-  )
 }
 
-export default Cart
+export default Cart;

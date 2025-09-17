@@ -28,7 +28,7 @@ const ProductDetails = () => {
     return product && (
         <div className='sm:w-[90%] sm:ms-[5%] max-sm:px-3 pt-5'>
                 <div>
-                        <button type='button' className='fixed max-sm:text-xl text-4xl max-sm:h-10 h-16 max-sm:w-10 w-16 text-[white] bg-amber-500 z-30 right-3 bottom-12 rounded-full cursor-pointer animate-bounce' onClick={()=>scrollTo(0,0)}><i className="fa-solid fa-angle-up"></i></button>
+                        <button type='button' className='fixed max-sm:text-xl text-4xl max-sm:h-10 h-16 max-sm:w-10 w-16 text-[white] bg-black dark:text-[black] dark:bg-white z-30 right-3 bottom-12 rounded-full cursor-pointer animate-bounce' onClick={()=>scrollTo(0,0)}><i className="fa-solid fa-angle-up"></i></button>
                 </div>
                 <div className="max-w-6xl w-full px-6">
                         <p className="text-[black] dark:text-[white]">
@@ -124,7 +124,7 @@ const ProductDetails = () => {
                                                         </div>
                                                                 <div className="flex items-end justify-between mt-3">
                                                                         <p className="md:text-xl text-base font-medium text-[red]">
-                                                                                {currency}${product.offerPrice}{" "} <span className="text-[#ff0000aa] md:text-sm text-xs line-through">{currency}${product.price}</span>
+                                                                                {currency}{product.offerPrice}{" "} <span className="text-[#ff0000aa] md:text-sm text-xs line-through">{currency}${product.price}</span>
                                                                         </p>
                                                                         <div onClick={(e)=> {e.stopPropagation();}}>
                                                                                 {!cartItems[product._id] ? (
