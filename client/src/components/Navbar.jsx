@@ -39,7 +39,7 @@ function Navbar({theme, setTheme, activeMenu, setActiveMenu}) {
                         <img className='w-[2.4rem] cursor-pointer' src={asserts.user} alt="user" />
                         <div className='absolute z-40 hidden group-hover:block w-[150px] dark:bg-black bg-[#ccc] rounded-md left-[-20px]'>
                             <NavLink to={'/profile'} className='block py-1 px-2 hover:bg-[green] text-[#000000bf] hover:text-[#000] dark:text-[#ffffff95] dark:hover:text-[white]' >Profile</NavLink>
-                            <NavLink to={'/order'} className='block py-1 px-2 hover:bg-[green] text-[#000000bf] hover:text-[#000] dark:text-[#ffffff95] dark:hover:text-[white]' >Orders</NavLink>
+                            <NavLink to={'/my-order'} className='block py-1 px-2 hover:bg-[green] text-[#000000bf] hover:text-[#000] dark:text-[#ffffff95] dark:hover:text-[white]' >My Orders</NavLink>
                             <p className='block cursor-pointer py-1 px-2 hover:bg-[green] text-[#000000bf] hover:text-[#000] dark:text-[#ffffff95] dark:hover:text-[white]' onClick={()=>setUser(null)} >Log out</p>
                         </div>
                     </div>
@@ -73,7 +73,7 @@ function Navbar({theme, setTheme, activeMenu, setActiveMenu}) {
                     :
                     <></>
                 }
-                <NavLink to={'/'} onClick={()=>setOpen(false)} className='text-[#000000bf] hover:text-[#000] dark:text-[#ffffff95] dark:hover:text-[white]' >Orders</NavLink>
+                <NavLink to={'/my-order'} onClick={()=>setOpen(false)} className='text-[#000000bf] hover:text-[#000] dark:text-[#ffffff95] dark:hover:text-[white]' >My Orders</NavLink>
                 <NavLink to={'/contact'} onClick={()=>setOpen(false)} className='text-[#000000bf] hover:text-[#000] dark:text-[#ffffff95] dark:hover:text-[white]' >Contact</NavLink>
                 <NavLink to={'/'} onClick={()=>{setOpen(false);setShowLogin(true)}} className='text-[#000000bf] hover:text-[#000] dark:text-[#ffffff95] dark:hover:text-[white]' >{user ? 'Log out' : 'Log in'}</NavLink>                
             </div>

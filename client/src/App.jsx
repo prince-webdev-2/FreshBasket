@@ -12,6 +12,8 @@ import ScrollToTop from './ScrollToTop';
 import ProductDetails from './pages/ProductDetails';
 import Cart from './pages/Cart';
 import AddAddress from './components/AddAddress';
+import MyOrder from './pages/MyOrder';
+import SellerLogin from './components/seller/SellerLogin';
 
 function App() {
   // variable to track user/seller
@@ -21,7 +23,7 @@ function App() {
   // useState for menu active class
   let [activeMenu, setActiveMenu]= useState('Home');
   // getting useState from context
-  const {showLogin, setShowLogin}= useAppContext();
+  const {showLogin, setShowLogin, isSeller}= useAppContext();
 
   // update theme using useEffect
   useEffect(()=>{
@@ -53,6 +55,8 @@ function App() {
           <Route path='/products/:category/:id' element={<ProductDetails />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/add-address' element={<AddAddress />} />
+          <Route path='/my-order' element={<MyOrder />} />
+          <Route path= '/seller' element={isSeller ? null : <SellerLogin />} />
         </Routes>
       </div>  
       {isSellerPath ? null : <Footer />}    

@@ -642,6 +642,80 @@ export const dummyProducts = [
 //   },
 ];
 
+// dummy order products list
+export const dummyOrderProducts = [
+  {
+    _id: "67e2589a8f87e63366787001",
+    name: "Apple",
+    description: "Fresh red apples, rich in vitamins and fiber.",
+    price: 2.5,
+    category: "Fruits",
+    stock: 100,
+    imageUrl: apple1,
+    paymentType: 'Online'
+  },
+  {
+    _id: "67e2589a8f87e63366787002",
+    name: "Banana",
+    description: "Ripe yellow bananas, great source of potassium.",
+    price: 1.2,
+    category: "Fruits",
+    stock: 150,
+    imageUrl: banana1,
+    paymentType: 'Online'
+  },
+  {
+    _id: "67e2589a8f87e63366787003",
+    name: "Tomato",
+    description: "Fresh organic tomatoes, perfect for salads and cooking.",
+    price: 1.8,
+    category: "Vegetables",
+    stock: 80,
+    imageUrl: tomato1,
+    paymentType: 'COD'
+  },
+  {
+    _id: "67e2589a8f87e63366787004",
+    name: "Potato",
+    description: "Farm fresh potatoes, ideal for everyday cooking.",
+    price: 1.0,
+    category: "Vegetables",
+    stock: 200,
+    imageUrl: potato1,
+    paymentType: 'COD'
+  },
+  {
+    _id: "67e2589a8f87e63366787005",
+    name: "Milk",
+    description: "Pure cow milk, full of calcium and protein.",
+    price: 0.99,
+    category: "Dairy",
+    stock: 60,
+    imageUrl: onion1,
+    paymentType: 'COD'
+  },
+  {
+    _id: "67e2589a8f87e63366787006",
+    name: "Cheese",
+    description: "Delicious cheddar cheese, perfect for sandwiches and cooking.",
+    price: 3.5,
+    category: "Dairy",
+    stock: 40,
+    imageUrl: carrot1,
+    paymentType: 'Online'
+  },
+  {
+    _id: "67e2589a8f87e63366787007",
+    name: "Cola Drink",
+    description: "Refreshing carbonated soft drink, 500ml bottle.",
+    price: 1.5,
+    category: "Soft Drink",
+    stock: 120,
+    imageUrl: pepsi1,
+    paymentType: 'COD'
+  },
+]
+
 
 
 
