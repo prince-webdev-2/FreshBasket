@@ -29,11 +29,13 @@ import affordable from './affordable.png'
 import expressDelivery from './express-delivery.png'
 import natural from './natural-ingredients.png'
 import trust from './trust.png'
+import location from './location-map.png'
 
 export const asserts={
         user,
         heroDiv1,
-        hero2black, hero2white
+        hero2black, hero2white,
+        location
 }
 
 export const categories = [

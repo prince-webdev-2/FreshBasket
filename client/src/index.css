@@ -13,6 +13,8 @@ html{
 *{
   font-family: "Outfit", sans-serif;
   box-sizing: border-box;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none; 
 }
 
 /* adding class :dark prefix */

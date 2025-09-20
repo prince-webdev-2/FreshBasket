@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react"
 import { useAppContext } from "../context/AppContext"
 import { categories } from "../assets/assets";
 const Cart = () => {
-    const [showAddress, setShowAddress] = React.useState(false)
 
-    const {cartTotalAmount, userAddress, currency, countCart,cartItems, removeFromCart, navigate, products, paymentType, setPaymentType}= useAppContext();
+    const {cartTotalAmount, userAddress,setUserAddress, currency, countCart,cartItems, removeFromCart, navigate, products, paymentType, setPaymentType}= useAppContext();
 
     // set final cart array
     const [cartList, setCartList]= useState([]);
@@ -27,6 +26,9 @@ const Cart = () => {
             getCart();
         }
     },[products, cartItems])
+    useEffect(()=>{
+
+    },[setUserAddress])
 
     
     return cartList.length > 0 ?(
@@ -55,12 +57,12 @@ const Cart = () => {
                                 <p className="hidden md:block font-semibold group-hover:text-black">{product.name}</p>
                                 <div className="font-normal text-gray-500/70">
                                     <div className='flex items-center'>
-                                        <p className=" group-hover:text-black">Qty: {cartItems[product._id]}</p>
+                                        <p className=" group-hover:text-black max-sm:dark:group-hover:text-white duration-300">Qty: {cartItems[product._id]}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <p className="text-center group-hover:text-black">${product.offerPrice * product.quantity}</p>
+                        <p className="text-center group-hover:text-black max-sm:dark:group-hover:text-white duration-300">${product.offerPrice * product.quantity}</p>
                         <button className="cursor-pointer mx-auto" onClick={()=>removeFromCart(product._id)}>
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="m12.5 7.5-5 5m0-5 5 5m5.833-2.5a8.333 8.333 0 1 1-16.667 0 8.333 8.333 0 0 1 16.667 0" stroke="#FF532E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -85,20 +87,17 @@ const Cart = () => {
                 <div className="mb-6">
                     <p className="text-sm font-medium uppercase dark:text-[#ffffffc2]">Delivery Address</p>
                     <div className="relative flex justify-between items-start mt-2">
-                        <p className="text-gray-500"> {userAddress} </p>
-                        <button onClick={() => setShowAddress(!showAddress)} className="text-indigo-500 hover:underline cursor-pointer">
+                        <div className="text-gray-500 space-y-1">
+                            <p>{userAddress.firstName} {userAddress.lastName}</p>
+                            <p>{userAddress.email}</p>
+                            <p>{userAddress.street}</p>
+                            <p>{userAddress.city} {userAddress.state}  {userAddress.zipcode}</p>
+                            <p>{userAddress.country}</p>
+                            <p>Phone: {userAddress.phone}</p>
+                        </div>
+                        <button onClick={() => navigate('add-address')} className="text-indigo-500 hover:underline cursor-pointer">
                             Change
                         </button>
-                        {showAddress && (
-                            <div className="absolute top-12 py-1 bg-white border border-gray-300 text-sm w-full">
-                                <p onClick={() => setShowAddress(false)} className="text-gray-500 p-2 hover:bg-gray-100">
-                                    New York, USA
-                                </p>
-                                <p onClick={() => setShowAddress(false)} className="text-indigo-500 text-center cursor-pointer p-2 hover:bg-indigo-500/10">
-                                    Add address
-                                </p>
-                            </div>
-                        )}
                     </div>
 
                     <p className="text-sm font-medium uppercase mt-6">Payment Method</p>

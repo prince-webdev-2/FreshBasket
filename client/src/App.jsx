@@ -11,6 +11,7 @@ import ProductCategory from './pages/ProductCategory';
 import ScrollToTop from './ScrollToTop';
 import ProductDetails from './pages/ProductDetails';
 import Cart from './pages/Cart';
+import AddAddress from './components/AddAddress';
 
 function App() {
   // variable to track user/seller
@@ -51,6 +52,7 @@ function App() {
           <Route path='/products/:category' element={<ProductCategory />} />
           <Route path='/products/:category/:id' element={<ProductDetails />} />
           <Route path='/cart' element={<Cart />} />
+          <Route path='/add-address' element={<AddAddress />} />
         </Routes>
       </div>  
       {isSellerPath ? null : <Footer />}    

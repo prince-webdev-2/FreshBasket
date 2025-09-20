@@ -15,7 +15,17 @@ export const AppContextProvider= ({children})=>{
         const [products, setProducts]= useState([])
         const [cartItems, setCartItems]= useState({})
         const [searchItem, setSearchItem]= useState('');
-        const [userAddress, setUserAddress]= useState('Ranchi Jharkhand')
+        const [userAddress, setUserAddress] = useState({
+                firstName: '',
+                lastName: '',
+                email: '',
+                street: '',
+                city: '',
+                state: '',
+                pincode: '',
+                country: '',
+                phone: ''
+        })
         const [paymentType, setPaymentType]= useState("COD")
 
         // fetch all products
