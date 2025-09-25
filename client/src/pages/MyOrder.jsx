@@ -16,7 +16,7 @@ function MyOrder() {
                         <div key={index} className='w-full p-4 border-1 border-[#ccc] rounded-sm mb-4 grid grid-cols-3 max-sm:grid-cols-1 dark:text-white'>
                                <div>
                                         <p>OrderId:{order._id}</p>
-                                        <div className='grid grid-cols-[40%_60%]'>
+                                        <div className='grid grid-cols-[40%_60%] sm:mt-4'>
                                                 <img src={order.imageUrl} alt="order-item-image" className='rounded-full h-20 w-20' />
                                                 <div>
                                                         <p>{order.name}</p>
@@ -26,15 +26,15 @@ function MyOrder() {
                                </div>
                                <div>
                                         <p>Payment:{order.paymentType}</p>
-                                        <div>
+                                        <div className='sm:mt-4'>
                                                 <p>Quantity:1</p>
                                                 <p>Status:Pending</p>
                                                 <p>Date:20/09/2025</p>
                                         </div>
                                </div>
                                <div>
-                                        <p>Total Amount:{currency}{order.price}</p>
-                                        <p>{order.price}</p>
+                                        <p>Total Amount:</p>
+                                        <p className='sm:mt-4 text-[red]'>{currency}{order.price}</p>
                                </div>
                         </div>
                 ))}

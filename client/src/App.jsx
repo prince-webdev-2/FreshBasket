@@ -14,6 +14,10 @@ import Cart from './pages/Cart';
 import AddAddress from './components/AddAddress';
 import MyOrder from './pages/MyOrder';
 import SellerLogin from './components/seller/SellerLogin';
+import SellerDashboard from './pages/seller/SellerDashboard';
+import AddProduct from './pages/seller/AddProduct';
+import ProductList from './pages/seller/ProductList';
+import Orders from './pages/seller/Orders';
 
 function App() {
   // variable to track user/seller
@@ -56,7 +60,11 @@ function App() {
           <Route path='/cart' element={<Cart />} />
           <Route path='/add-address' element={<AddAddress />} />
           <Route path='/my-order' element={<MyOrder />} />
-          <Route path= '/seller' element={isSeller ? null : <SellerLogin />} />
+          <Route path= '/seller' element={isSeller ? <SellerDashboard theme={theme} setTheme={setTheme} /> : <SellerLogin />} >
+              <Route index element={isSeller? <AddProduct /> : null} />
+              <Route path='product-list' element={<ProductList />} />
+              <Route path='orders' element={<Orders />} />
+          </Route>
         </Routes>
       </div>  
       {isSellerPath ? null : <Footer />}    

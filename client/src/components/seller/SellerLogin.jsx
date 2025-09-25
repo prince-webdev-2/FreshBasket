@@ -8,12 +8,15 @@ function SellerLogin() {
 
         const onSubmitHandler= async(e)=>{
           e.preventDefault();
-          setIsSeller(true);
+          if( email=== 'kumarprincr7870@gmail.com' && password=== 'Prince@123'){
+            setIsSeller(true);
+            navigate('/seller');
+          } else{
+            alert('Use correct email and password');
+            setEmail('');
+            setPassword('');
+          }
         }
-
-        useEffect(()=>{
-          navigate('/seller')
-        },[isSeller]);
 
   return !isSeller &&(
     <div className='w-full h-[100vh]'>
