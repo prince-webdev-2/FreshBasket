@@ -10,21 +10,82 @@ import vegetables from './vegetables.png'
 import spices from './spices.png'
 import hero2black from './hero-2-black.png'
 import hero2white from './hero-2-white.png'
-import apple1 from './apple-1.jpg'
-import banana1 from './banana-1.jpg'
-import grapes1 from './grapes-1.jpg'
-import mango1 from './mango-1.jpg'
-import orange1 from './orange-1.jpg'
-import potato1 from './potato-1.jpg'
-import tomato1 from './tomato-1.jpg'
-import onion1 from './onion-1.jpg'
-import carrot1 from './carrot-1.jpg'
-import cauliflower1 from './cauliflower-1.jpg'
-import cocolo1 from './cococola-1.jpg'
-import sprite1 from './sprite-1.jpg'
-import pepsi1 from './pepsi-1.jpg'
-import fanta1 from './fanta-1.jpg'
-import maaza1 from './maaza-1.jpg'
+
+import apple1 from './apple1.jpg'
+import apple2 from './apple2.jpg'
+import apple3 from './apple3.jpg'
+import apple4 from './apple4.jpg'
+
+import banana1 from './banana1.jpg'
+import banana2 from './banana2.jpg'
+import banana3 from './banana3.jpg'
+import banana4 from './banana4.jpg'
+
+import grapes1 from './grapes1.jpg'
+import grapes2 from './grapes2.jpg'
+import grapes3 from './grapes3.jpg'
+import grapes4 from './grapes4.jpg'
+
+import mango1 from './mango1.jpg'
+import mango2 from './mango2.jpg'
+import mango3 from './mango3.jpg'
+import mango4 from './mango4.jpg'
+
+import orange1 from './orange1.jpg'
+import orange2 from './orange2.jpg'
+import orange3 from './orange3.jpg'
+import orange4 from './orange4.jpg'
+
+import potato1 from './potato1.jpg'
+import potato2 from './potato2.jpg'
+import potato3 from './potato3.jpg'
+import potato4 from './potato4.jpg'
+
+import tomato1 from './tomato1.jpg'
+import tomato2 from './tomato2.jpg'
+import tomato3 from './tomato3.jpg'
+import tomato4 from './tomato4.jpg'
+
+import onion1 from './onion1.jpg'
+import onion2 from './onion2.jpg'
+import onion3 from './onion3.jpg'
+import onion4 from './onion4.jpg'
+
+import carrot1 from './carrot1.jpg'
+import carrot2 from './carrot2.jpg'
+import carrot3 from './carrot3.jpg'
+import carrot4 from './carrot4.jpg'
+
+import cauliflower1 from './cauliflower1.jpg'
+import cauliflower2 from './cauliflower2.jpg'
+import cauliflower3 from './cauliflower3.jpg'
+import cauliflower4 from './cauliflower4.jpg'
+
+import cocolo1 from './cococola1.jpg'
+import cocolo2 from './cococola2.jpg'
+import cocolo3 from './cococola3.jpg'
+import cocolo4 from './cococola4.jpg'
+
+import sprite1 from './sprite1.jpg'
+import sprite2 from './sprite2.jpg'
+import sprite3 from './sprite3.jpg'
+import sprite4 from './sprite4.jpg'
+
+import pepsi1 from './pepsi1.jpg'
+import pepsi2 from './pepsi2.jpg'
+import pepsi3 from './pepsi3.jpg'
+import pepsi4 from './pepsi4.jpg'
+
+import fanta1 from './fanta1.jpg'
+import fanta2 from './fanta2.jpg'
+import fanta3 from './fanta3.jpg'
+import fanta4 from './fanta4.jpg'
+
+import maaza1 from './maaza1.jpg'
+import maaza2 from './maaza2.jpg'
+import maaza3 from './maaza3.jpg'
+import maaza4 from './maaza4.jpg'
+
 import affordable from './affordable.png'
 import expressDelivery from './express-delivery.png'
 import natural from './natural-ingredients.png'
@@ -152,7 +213,7 @@ export const dummyProducts = [
     category: "Fruits",
     price: 120,
     offerPrice: 100,
-    image: [apple1],
+    image: [apple1,apple2, apple3, apple4],
     description: ["Fresh and juicy", "Rich in fiber", "Boosts immunity"],
     createdAt: "2025-09-13T12:00:00Z",
     updatedAt: "2025-09-13T12:00:00Z",
@@ -164,7 +225,7 @@ export const dummyProducts = [
     category: "Fruits",
     price: 100,
     offerPrice: 70,
-    image: [banana1],
+    image: [banana1, banana2, banana3, banana4],
     description: ["Naturally sweet", "Good for digestion", "Rich in potassium"],
     createdAt: "2025-09-13T12:01:00Z",
     updatedAt: "2025-09-13T12:01:00Z",
@@ -176,7 +237,7 @@ export const dummyProducts = [
     category: "Fruits",
     price: 150,
     offerPrice: 130,
-    image: [mango1],
+    image: [mango1, mango2, mango3, mango4],
     description: ["King of fruits", "Sweet and juicy", "Rich in Vitamin A"],
     createdAt: "2025-09-13T12:02:00Z",
     updatedAt: "2025-09-13T12:02:00Z",
@@ -188,7 +249,7 @@ export const dummyProducts = [
     category: "Fruits",
     price: 80,
     offerPrice: 70,
-    image: [orange1],
+    image: [orange1, orange2, orange3, orange4],
     description: ["Citrus fruit", "Rich in Vitamin C", "Juicy and tangy"],
     createdAt: "2025-09-13T12:03:00Z",
     updatedAt: "2025-09-13T12:03:00Z",
@@ -200,7 +261,7 @@ export const dummyProducts = [
     category: "Fruits",
     price: 90,
     offerPrice: 75,
-    image: [grapes1],
+    image: [grapes1, grapes2, grapes3, grapes4],
     description: ["Sweet and seedless", "Rich in antioxidants", "Great snack"],
     createdAt: "2025-09-13T12:04:00Z",
     updatedAt: "2025-09-13T12:04:00Z",
@@ -214,7 +275,7 @@ export const dummyProducts = [
     category: "Vegetables",
     price: 30,
     offerPrice: 25,
-    image: [potato1],
+    image: [potato1, potato2, potato3, potato4],
     description: ["Fresh and organic", "Rich in carbs", "Ideal for fries"],
     createdAt: "2025-09-13T12:05:00Z",
     updatedAt: "2025-09-13T12:05:00Z",
@@ -226,7 +287,7 @@ export const dummyProducts = [
     category: "Vegetables",
     price: 40,
     offerPrice: 35,
-    image: [tomato1],
+    image: [tomato1, tomato2, tomato3, tomato4],
     description: ["Fresh and juicy", "Used in curries", "Rich in Vitamin C"],
     createdAt: "2025-09-13T12:06:00Z",
     updatedAt: "2025-09-13T12:06:00Z",
@@ -238,7 +299,7 @@ export const dummyProducts = [
     category: "Vegetables",
     price: 50,
     offerPrice: 45,
-    image: [onion1],
+    image: [onion1, onion2, onion3, onion4],
     description: ["Kitchen essential", "Adds flavor", "Fresh and organic"],
     createdAt: "2025-09-13T12:07:00Z",
     updatedAt: "2025-09-13T12:07:00Z",
@@ -250,7 +311,7 @@ export const dummyProducts = [
     category: "Vegetables",
     price: 60,
     offerPrice: 55,
-    image: [carrot1],
+    image: [carrot1, carrot2, carrot3, carrot4],
     description: ["Rich in Vitamin A", "Good for eyesight", "Crunchy and sweet"],
     createdAt: "2025-09-13T12:08:00Z",
     updatedAt: "2025-09-13T12:08:00Z",
@@ -262,7 +323,7 @@ export const dummyProducts = [
     category: "Vegetables",
     price: 70,
     offerPrice: 60,
-    image: [cauliflower1],
+    image: [cauliflower1, cauliflower2, cauliflower3, cauliflower4],
     description: ["Fresh and organic", "Good for curries", "Rich in fiber"],
     createdAt: "2025-09-13T12:09:00Z",
     updatedAt: "2025-09-13T12:09:00Z",
@@ -276,7 +337,7 @@ export const dummyProducts = [
     category: "Drinks",
     price: 60,
     offerPrice: 55,
-    image: [cocolo1],
+    image: [cocolo1, cocolo2, cocolo3, cocolo4],
     description: ["Refreshing taste", "Popular soft drink", "Best served chilled"],
     createdAt: "2025-09-13T12:10:00Z",
     updatedAt: "2025-09-13T12:10:00Z",
@@ -288,7 +349,7 @@ export const dummyProducts = [
     category: "Drinks",
     price: 60,
     offerPrice: 55,
-    image: [pepsi1],
+    image: [pepsi1, pepsi2, pepsi3, pepsi4],
     description: ["Bold taste", "Carbonated drink", "Best for parties"],
     createdAt: "2025-09-13T12:11:00Z",
     updatedAt: "2025-09-13T12:11:00Z",
@@ -300,7 +361,7 @@ export const dummyProducts = [
     category: "Drinks",
     price: 55,
     offerPrice: 50,
-    image: [sprite1],
+    image: [sprite1, sprite2, sprite3, sprite4],
     description: ["Lemon flavor", "Refreshing drink", "Caffeine free"],
     createdAt: "2025-09-13T12:12:00Z",
     updatedAt: "2025-09-13T12:12:00Z",
@@ -312,7 +373,7 @@ export const dummyProducts = [
     category: "Drinks",
     price: 55,
     offerPrice: 50,
-    image: [fanta1],
+    image: [fanta1, fanta2, fanta3, fanta4],
     description: ["Orange flavor", "Refreshing", "Perfect for kids"],
     createdAt: "2025-09-13T12:13:00Z",
     updatedAt: "2025-09-13T12:13:00Z",
@@ -324,7 +385,7 @@ export const dummyProducts = [
     category: "Drinks",
     price: 70,
     offerPrice: 65,
-    image: [maaza1],
+    image: [maaza1, maaza2, maaza3, maaza4],
     description: ["Mango drink", "Rich taste", "Loved by all"],
     createdAt: "2025-09-13T12:14:00Z",
     updatedAt: "2025-09-13T12:14:00Z",
