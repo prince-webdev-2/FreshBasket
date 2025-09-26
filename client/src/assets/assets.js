@@ -86,17 +86,74 @@ import maaza2 from './maaza2.jpg'
 import maaza3 from './maaza3.jpg'
 import maaza4 from './maaza4.jpg'
 
+import maggie1 from './maggie1.png'
+import maggie2 from './maggie2.png'
+import maggie3 from './maggie3.png'
+import maggie4 from './maggie4.png'
+
+import cupNoodles1 from './cupNoodles1.jpg'
+import cupNoodles2 from './cupNoodles2.jpg'
+import cupNoodles3 from './cupNoodles3.jpg'
+import cupNoodles4 from './cupNoodles4.jpg'
+
+import pasta1 from './pasta1.png'
+import pasta2 from './pasta2.png'
+import pasta3 from './pasta3.png'
+import pasta4 from './pasta4.png'
+
+import soup1 from './soup1.jpg'
+import soup2 from './soup2.png'
+import soup3 from './soup3.png'
+import soup4 from './soup4.png'
+
+import curry1 from './curry1.png'
+import curry2 from './curry2.png'
+import curry3 from './curry3.jpg'
+import curry4 from './curry4.jpg'
+
+import amulMilk1 from './amulMilk1.png'
+import amulMilk2 from './amulMilk2.png'
+import amulMilk3 from './amulMilk3.png'
+import amulMilk4 from './amulMilk4.png'
+
+import cheese1 from './cheese1.png'
+import cheese2 from './cheese2.png'
+import cheese3 from './cheese3.jpg'
+import cheese4 from './cheese4.jpg'
+
+import curd1 from './curd1.png'
+import curd2 from './curd2.png'
+import curd3 from './curd3.png'
+import curd4 from './curd4.png'
+
+import butter1 from './butter1.png'
+import butter2 from './butter2.png'
+
+import paneer1 from './paneer1.png'
+import paneer2 from './paneer2.png'
+
+import brownBread1 from './brownBread1.jpg'
+import brownBread2 from './brownBread2.jpg'
+import brownBread3 from './brownBread3.jpg'
+
+import cutterCroissant1 from './cutterCroissant1.jpg'
+import cutterCroissant2 from './cutterCroissant2.jpg'
+import cutterCroissant3 from './cutterCroissant3.jpg'
+import cutterCroissant4 from './cutterCroissant4.jpg'
+
 import affordable from './affordable.png'
 import expressDelivery from './express-delivery.png'
 import natural from './natural-ingredients.png'
 import trust from './trust.png'
 import location from './location-map.png'
+import upload from './upload.png'
 
 export const asserts={
         user,
         heroDiv1,
         hero2black, hero2white,
-        location
+        location,
+        upload
 }
 
 export const categories = [
@@ -393,154 +450,154 @@ export const dummyProducts = [
   },
 
   // ================= Instant Food =================
-//   {
-//     _id: "i1",
-//     name: "Maggie Noodles 70g",
-//     category: "Instant-Food",
-//     price: 15,
-//     offerPrice: 12,
-//     image: [maggie],
-//     description: ["2-min noodles", "Tasty and quick", "Kids favorite"],
-//     createdAt: "2025-09-13T12:15:00Z",
-//     updatedAt: "2025-09-13T12:15:00Z",
-//     inStock: true,
-//   },
-//   {
-//     _id: "i2",
-//     name: "Cup Noodles",
-//     category: "Instant-Food",
-//     price: 45,
-//     offerPrice: 40,
-//     image: [cupnoodles_image],
-//     description: ["Quick meal", "Ready in 3 min", "Different flavors"],
-//     createdAt: "2025-09-13T12:16:00Z",
-//     updatedAt: "2025-09-13T12:16:00Z",
-//     inStock: true,
-//   },
-//   {
-//     _id: "i3",
-//     name: "Pasta Pack",
-//     category: "Instant-Food",
-//     price: 90,
-//     offerPrice: 80,
-//     image: [pasta_image],
-//     description: ["Easy to cook", "Tasty flavors", "Popular Italian food"],
-//     createdAt: "2025-09-13T12:17:00Z",
-//     updatedAt: "2025-09-13T12:17:00Z",
-//     inStock: true,
-//   },
-//   {
-//     _id: "i4",
-//     name: "Instant Soup",
-//     category: "Instant-Food",
-//     price: 50,
-//     offerPrice: 45,
-//     image: [soup_image],
-//     description: ["Quick soup", "Comfort food", "Multiple flavors"],
-//     createdAt: "2025-09-13T12:18:00Z",
-//     updatedAt: "2025-09-13T12:18:00Z",
-//     inStock: true,
-//   },
-//   {
-//     _id: "i5",
-//     name: "Ready-to-Eat Curry",
-//     category: "Instant-Food",
-//     price: 120,
-//     offerPrice: 100,
-//     image: [curry_image],
-//     description: ["Instant meal", "Authentic taste", "Good for travel"],
-//     createdAt: "2025-09-13T12:19:00Z",
-//     updatedAt: "2025-09-13T12:19:00Z",
-//     inStock: true,
-//   },
+  {
+    _id: "i1",
+    name: "Maggie Noodles 70g",
+    category: "Instant-Food",
+    price: 15,
+    offerPrice: 12,
+    image: [maggie4, maggie1, maggie2, maggie3],
+    description: ["2-min noodles", "Tasty and quick", "Kids favorite"],
+    createdAt: "2025-09-13T12:15:00Z",
+    updatedAt: "2025-09-13T12:15:00Z",
+    inStock: true,
+  },
+  {
+    _id: "i2",
+    name: "Cup Noodles",
+    category: "Instant-Food",
+    price: 45,
+    offerPrice: 40,
+    image: [cupNoodles1, cupNoodles2, cupNoodles3, cupNoodles4],
+    description: ["Quick meal", "Ready in 3 min", "Different flavors"],
+    createdAt: "2025-09-13T12:16:00Z",
+    updatedAt: "2025-09-13T12:16:00Z",
+    inStock: true,
+  },
+  {
+    _id: "i3",
+    name: "Pasta Pack",
+    category: "Instant-Food",
+    price: 90,
+    offerPrice: 80,
+    image: [pasta1, pasta2, pasta3, pasta4],
+    description: ["Easy to cook", "Tasty flavors", "Popular Italian food"],
+    createdAt: "2025-09-13T12:17:00Z",
+    updatedAt: "2025-09-13T12:17:00Z",
+    inStock: true,
+  },
+  {
+    _id: "i4",
+    name: "Instant Soup",
+    category: "Instant-Food",
+    price: 50,
+    offerPrice: 45,
+    image: [soup1, soup2, soup3, soup4],
+    description: ["Quick soup", "Comfort food", "Multiple flavors"],
+    createdAt: "2025-09-13T12:18:00Z",
+    updatedAt: "2025-09-13T12:18:00Z",
+    inStock: true,
+  },
+  {
+    _id: "i5",
+    name: "Ready-to-Eat Curry",
+    category: "Instant-Food",
+    price: 120,
+    offerPrice: 100,
+    image: [curry1, curry2, curry3, curry4],
+    description: ["Instant meal", "Authentic taste", "Good for travel"],
+    createdAt: "2025-09-13T12:19:00Z",
+    updatedAt: "2025-09-13T12:19:00Z",
+    inStock: true,
+  },
 
 //   // ================= Dairy Products =================
-//   {
-//     _id: "d1",
-//     name: "Amul Milk 1L",
-//     category: "Dairy",
-//     price: 60,
-//     offerPrice: 55,
-//     image: [amul_milk_image],
-//     description: ["Fresh milk", "Rich in calcium", "High quality"],
-//     createdAt: "2025-09-13T12:20:00Z",
-//     updatedAt: "2025-09-13T12:20:00Z",
-//     inStock: true,
-//   },
-//   {
-//     _id: "d2",
-//     name: "Cheese Pack 200g",
-//     category: "Dairy",
-//     price: 120,
-//     offerPrice: 110,
-//     image: [cheese_image],
-//     description: ["Creamy cheese", "Rich in protein", "Great for sandwiches"],
-//     createdAt: "2025-09-13T12:21:00Z",
-//     updatedAt: "2025-09-13T12:21:00Z",
-//     inStock: true,
-//   },
-//   {
-//     _id: "d3",
-//     name: "Curd 500g",
-//     category: "Dairy",
-//     price: 40,
-//     offerPrice: 35,
-//     image: [curd_image],
-//     description: ["Fresh curd", "Good for digestion", "Rich in probiotics"],
-//     createdAt: "2025-09-13T12:22:00Z",
-//     updatedAt: "2025-09-13T12:22:00Z",
-//     inStock: true,
-//   },
-//   {
-//     _id: "d4",
-//     name: "Butter 200g",
-//     category: "Dairy",
-//     price: 90,
-//     offerPrice: 85,
-//     image: [butter_image],
-//     description: ["Smooth and creamy", "Perfect for baking", "Rich taste"],
-//     createdAt: "2025-09-13T12:23:00Z",
-//     updatedAt: "2025-09-13T12:23:00Z",
-//     inStock: true,
-//   },
-//   {
-//     _id: "d5",
-//     name: "Paneer 250g",
-//     category: "Dairy",
-//     price: 100,
-//     offerPrice: 90,
-//     image: [paneer_image],
-//     description: ["Fresh paneer", "Rich in protein", "Essential for curries"],
-//     createdAt: "2025-09-13T12:24:00Z",
-//     updatedAt: "2025-09-13T12:24:00Z",
-//     inStock: true,
-//   },
+  {
+    _id: "d1",
+    name: "Amul Milk 1L",
+    category: "Dairy",
+    price: 60,
+    offerPrice: 55,
+    image: [amulMilk1, amulMilk2, amulMilk3, amulMilk4],
+    description: ["Fresh milk", "Rich in calcium", "High quality"],
+    createdAt: "2025-09-13T12:20:00Z",
+    updatedAt: "2025-09-13T12:20:00Z",
+    inStock: true,
+  },
+  {
+    _id: "d2",
+    name: "Cheese Pack 200g",
+    category: "Dairy",
+    price: 120,
+    offerPrice: 110,
+    image: [cheese1, cheese2, cheese3, cheese4],
+    description: ["Creamy cheese", "Rich in protein", "Great for sandwiches"],
+    createdAt: "2025-09-13T12:21:00Z",
+    updatedAt: "2025-09-13T12:21:00Z",
+    inStock: true,
+  },
+  {
+    _id: "d3",
+    name: "Curd 500g",
+    category: "Dairy",
+    price: 40,
+    offerPrice: 35,
+    image: [curd1, curd2, curd3, curd4],
+    description: ["Fresh curd", "Good for digestion", "Rich in probiotics"],
+    createdAt: "2025-09-13T12:22:00Z",
+    updatedAt: "2025-09-13T12:22:00Z",
+    inStock: true,
+  },
+  {
+    _id: "d4",
+    name: "Butter 200g",
+    category: "Dairy",
+    price: 90,
+    offerPrice: 85,
+    image: [butter1, butter2],
+    description: ["Smooth and creamy", "Perfect for baking", "Rich taste"],
+    createdAt: "2025-09-13T12:23:00Z",
+    updatedAt: "2025-09-13T12:23:00Z",
+    inStock: true,
+  },
+  {
+    _id: "d5",
+    name: "Paneer 250g",
+    category: "Dairy",
+    price: 100,
+    offerPrice: 90,
+    image: [paneer1, paneer2],
+    description: ["Fresh paneer", "Rich in protein", "Essential for curries"],
+    createdAt: "2025-09-13T12:24:00Z",
+    updatedAt: "2025-09-13T12:24:00Z",
+    inStock: true,
+  },
 
 //   // ================= Bakery & Breads =================
-//   {
-//     _id: "b1",
-//     name: "Brown Bread",
-//     category: "Bakery",
-//     price: 40,
-//     offerPrice: 35,
-//     image: [brown_bread_image],
-//     description: ["Healthy bread", "Rich in fiber", "Freshly baked"],
-//     createdAt: "2025-09-13T12:25:00Z",
-//     updatedAt: "2025-09-13T12:25:00Z",
-//     inStock: true,
-//   },
-//   {
-//     _id: "b2",
-//     name: "Butter Croissant",
-//     category: "Bakery",
-//     price: 70,
-//     offerPrice: 65,
-//     image: [butter_croissant_image],
-//     description: ["Soft and buttery", "Perfect breakfast", "French delight"],
-//     createdAt: "2025-09-13T12:26:00Z",
-//     updatedAt: "2025-09-13T12:26:00Z",
-//     inStock: true,
-//   },
+  {
+    _id: "b1",
+    name: "Brown Bread",
+    category: "Bakery",
+    price: 40,
+    offerPrice: 35,
+    image: [brownBread1, brownBread2, brownBread3],
+    description: ["Healthy bread", "Rich in fiber", "Freshly baked"],
+    createdAt: "2025-09-13T12:25:00Z",
+    updatedAt: "2025-09-13T12:25:00Z",
+    inStock: true,
+  },
+  {
+    _id: "b2",
+    name: "Butter Croissant",
+    category: "Bakery",
+    price: 70,
+    offerPrice: 65,
+    image: [cutterCroissant1, cutterCroissant2, cutterCroissant3, cutterCroissant4],
+    description: ["Soft and buttery", "Perfect breakfast", "French delight"],
+    createdAt: "2025-09-13T12:26:00Z",
+    updatedAt: "2025-09-13T12:26:00Z",
+    inStock: true,
+  },
 //   {
 //     _id: "b3",
 //     name: "Chocolate Muffin",

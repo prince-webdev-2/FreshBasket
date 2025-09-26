@@ -50,7 +50,7 @@ const SellerDash = ({theme, setTheme}) => {
                         {sidebarLinks.map((item) => (
                         <NavLink to={item.path} key={item.name} end={item.path=== '/seller'}
                                 className={({isActive})=>`flex items-center py-3 px-4 gap-3 
-                                ${isActive ? "border-r-4 md:border-r-[6px] bg-indigo-500/10 border-indigo-500 text-indigo-500"
+                                ${isActive ? "border-r-4 md:border-r-[6px] bg-indigo-500/10 border-[red] text-[red]"
                                         : "hover:bg-gray-100/90 border-white text-gray-700"
                                 }`
                                 }
@@ -61,7 +61,7 @@ const SellerDash = ({theme, setTheme}) => {
                         ))}
                         <button className='sm:hidden text-lg text-black dark:text-white cursor-pointer' onClick={logout}><i className="fa-solid fa-power-off"></i></button>
                 </div>
-                <div className="w-[80%] sm:w-[75%] lg:w-[85%] lg:px-10 bg-transparent h-[80vh] overflow-y-auto">    
+                <div className="w-[80%] sm:w-[75%] lg:w-[85%] lg:px-10 bg-transparent h-[85vh] lg:h-[80vh] overflow-y-auto">    
                         <Outlet />
                 </div>
             </div>

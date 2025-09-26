@@ -1,10 +1,9 @@
+import { useAppContext } from "../../context/AppContext";
+
 const ProductList = () => {
 
-    const products = [
-        { name: "Nike Pegasus 41 shoes", category: "Shoes", offerPrice: 999, inStock: true, image: "https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/card/productImage.png", },
-        { name: "Nike Pegasus 41 shoes", category: "Shoes", offerPrice: 999, inStock: false, image: "https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/card/productImage2.png", },
-        { name: "Nike Pegasus 41 shoes", category: "Shoes", offerPrice: 999, inStock: true, image: "https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/card/productImage3.png", },
-    ];
+    const {products}= useAppContext();
+
 
     return (
         <div className="flex-1 flex flex-col justify-between bg-transparent">
@@ -13,7 +12,7 @@ const ProductList = () => {
                 <div className="flex flex-col items-center max-w-4xl w-full overflow-hidden rounded-md bg-white dark:bg-black border border-gray-500/20 dark:border-[white]">
                     <table className="md:table-auto table-fixed w-full overflow-hidden">
                         <thead className="text-gray-900 text-sm text-left">
-                            <tr className="text-white daek:recr">
+                            <tr className="text-black dark:text-white">
                                 <th className="px-4 py-3 font-semibold truncate">Product</th>
                                 <th className="px-4 py-3 font-semibold truncate">Category</th>
                                 <th className="px-4 py-3 font-semibold truncate hidden md:block">Selling Price</th>
@@ -22,10 +21,10 @@ const ProductList = () => {
                         </thead>
                         <tbody className="text-sm text-gray-500">
                             {products.map((product, index) => (
-                                <tr key={index} className="border-t border-gray-500/20">
+                                <tr key={index} className="border-t border-gray-500/20 hover:scale-103 duration-300">
                                     <td className="md:px-4 pl-2 md:pl-4 py-3 flex items-center space-x-3 truncate">
                                         <div className="border border-gray-300 rounded overflow-hidden">
-                                            <img src={product.image} alt="Product" className="w-16" />
+                                            <img src={product.image[0]} alt="Product" className="w-16" />
                                         </div>
                                         <span className="truncate max-sm:hidden w-full">{product.name}</span>
                                     </td>
