@@ -1,45 +1,52 @@
+import { useEffect, useState } from "react";
+import asserts, { dummyOrderProducts } from "../../assets/assets";
+import { useAppContext } from "../../context/AppContext";
+
 const Orders = () => {
-    const boxIcon = "https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/e-commerce/boxIcon.svg"
+  const { currency } = useAppContext();
+  const [orders, setOrders] = useState([]);
 
-    const orders = [
-        { id: 1, items: [{ product: { name: "Nike Air Max 270" }, quantity: 1 }], address: { firstName: "John", lastName: "Doe", street: "123 Main St", city: "New York", state: "NY", zipcode: "10001", country: "USA"}, amount: 320.0, paymentType: "Credit Card", orderDate: "10/10/2022", isPaid: true },
-        { id: 1, items: [{ product: { name: "Nike Air Max 270" }, quantity: 1 }], address: { firstName: "John", lastName: "Doe", street: "123 Main St", city: "New York", state: "NY", zipcode: "10001", country: "USA"}, amount: 320.0, paymentType: "Credit Card", orderDate: "10/10/2022", isPaid: true },
-        { id: 1, items: [{ product: { name: "Nike Air Max 270" }, quantity: 1 }], address: { firstName: "John", lastName: "Doe", street: "123 Main St", city: "New York", state: "NY", zipcode: "10001", country: "USA"}, amount: 320.0, paymentType: "Credit Card", orderDate: "10/10/2022", isPaid: true },
-    ];
-    return (
-        <div className="md:p-10 p-4 space-y-4 text-black dark:text-white">
-            <h2 className="text-lg font-medium text-[winter[">Orders List</h2>
-            {orders.map((order, index) => (
-                <div key={index} className="flex flex-col md:grid md:grid-cols-[2fr_1fr_1fr_1fr] md:items-center gap-5 p-5 max-w-4xl rounded-md border border-gray-300 text-gray-800 hover:scale-103 duration-300">
-                    <div className="flex gap-5">
-                        <img className="w-12 h-12 object-cover opacity-60" src={boxIcon} alt="boxIcon" />
-                        <>
-                            {order.items.map((item, index) => (
-                                <div key={index} className="flex flex-col justify-center">
-                                    <p className="font-medium text-black dark:text-white">
-                                        {item.product.name} <span className={`text-indigo-500 ${item.quantity < 2 && "hidden"}`}>x {item.quantity}</span>
-                                    </p>
-                                </div>
-                            ))}
-                        </>
-                    </div>
+  const fetchOrders = async () => {
+    setOrders(dummyOrderProducts);
+  };
 
-                    <div className="text-sm text-black dark:text-white">
-                        <p className='font-medium mb-1'>{order.address.firstName} {order.address.lastName}</p>
-                        <p>{order.address.street}, {order.address.city}, {order.address.state},{order.address.zipcode}, {order.address.country}</p>
-                    </div>
+  useEffect(() => {
+    fetchOrders();
+  }, []);
 
-                    <p className="font-medium text-base my-auto text-black/70">${order.amount}</p>
+  return (
+    <div className="md:p-10 p-4 space-y-4">
+      <h2 className="text-lg font-medium text-black dark:text-white">Orders List</h2>
 
-                    <div className="flex flex-col text-sm text-black dark:text-white">
-                        <p>Method: {order.paymentType}</p>
-                        <p>Date: {order.orderDate}</p>
-                        <p>Payment: {order.isPaid ? "Paid" : "Pending"}</p>
-                    </div>
-                </div>
-            ))}
+      {orders.map((order, index) => (
+        <div key={index} className="flex flex-col md:grid md:grid-cols-[2fr_1fr_1fr_1fr] md:items-center gap-5 p-5 max-w-4xl rounded-md border border-gray-300 text-gray-800 dark:text-white hover:scale-95 duration-300" >
+          <div className="flex gap-5">
+            <img className="w-12 h-12 object-cover opacity-60" src={asserts.boxIcon} alt="boxIcon" />
+            <div className="flex flex-col justify-center space-y-1">
+              {order.items.map((item, idx) => (
+                <p key={idx} className="font-medium">
+                  {item.name}{" "}
+                  <span className={`text-indigo-500 ${item.quantity < 2 && "hidden"}`}> x {item.quantity} </span>
+                </p>
+              ))}
+            </div>
+          </div>
+          <div className="text-sm">
+            <p className="font-medium mb-1">{order.customerName}</p>
+            <p>{order.address}</p>
+          </div>
+          <p className="font-medium text-base my-auto text-[red]">
+            {currency}{order.amount.toFixed(2)}
+          </p>
+          <div className="flex flex-col text-sm">
+            <p>Method: {order.paymentType}</p>
+            <p>Date: {order.date}</p>
+            <p>Payment: {order.isPaid ? "Paid" : "Pending"}</p>
+          </div>
         </div>
-    );
+      ))}
+    </div>
+  );
 };
 
 export default Orders;

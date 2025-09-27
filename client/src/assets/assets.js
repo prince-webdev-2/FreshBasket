@@ -147,13 +147,15 @@ import natural from './natural-ingredients.png'
 import trust from './trust.png'
 import location from './location-map.png'
 import upload from './upload.png'
+import boxIcon from './box.png'
 
 export const asserts={
         user,
         heroDiv1,
         hero2black, hero2white,
         location,
-        upload
+        upload,
+        boxIcon,
 }
 
 export const categories = [
@@ -763,78 +765,62 @@ export const dummyProducts = [
 // dummy order products list
 export const dummyOrderProducts = [
   {
-    _id: "67e2589a8f87e63366787001",
-    name: "Apple",
-    description: "Fresh red apples, rich in vitamins and fiber.",
-    price: 2.5,
-    category: "Fruits",
-    stock: 100,
-    imageUrl: apple1,
-    paymentType: 'Online'
+    _id: "order001",
+    items: [
+      { name: "Apple", price: 2.5, quantity: 2, imageUrl: apple1 },
+      { name: "Banana", price: 1.2, quantity: 3, imageUrl: banana1 },
+    ],
+    customerName: "Prince Kumar",
+    phone: "9876543210",
+    address: "Main Road, Ranchi, Jharkhand, India",
+    paymentType: "Online",
+    isPaid: true,
+    date: new Date().toLocaleDateString(),
+    amount: 2.5 * 2 + 1.2 * 3,
   },
   {
-    _id: "67e2589a8f87e63366787002",
-    name: "Banana",
-    description: "Ripe yellow bananas, great source of potassium.",
-    price: 1.2,
-    category: "Fruits",
-    stock: 150,
-    imageUrl: banana1,
-    paymentType: 'Online'
+    _id: "order002",
+    items: [
+      { name: "Tomato", price: 1.8, quantity: 4, imageUrl: tomato1 },
+      { name: "Potato", price: 1.0, quantity: 5, imageUrl: potato1 },
+    ],
+    customerName: "Rahul Kumar",
+    phone: "9876501234",
+    address: "Sector 10, Noida, Uttar Pradesh",
+    paymentType: "COD",
+    isPaid: false,
+    date: new Date().toLocaleDateString(),
+    amount: 1.8 * 4 + 1.0 * 5,
   },
   {
-    _id: "67e2589a8f87e63366787003",
-    name: "Tomato",
-    description: "Fresh organic tomatoes, perfect for salads and cooking.",
-    price: 1.8,
-    category: "Vegetables",
-    stock: 80,
-    imageUrl: tomato1,
-    paymentType: 'COD'
+    _id: "order003",
+    items: [
+      { name: "Milk", price: 0.99, quantity: 6, imageUrl: amulMilk1 },
+      { name: "Cheese", price: 3.5, quantity: 1, imageUrl: cheese1 },
+    ],
+    customerName: "Sneha Verma",
+    phone: "9123456789",
+    address: "Park Street, Kolkata, West Bengal",
+    paymentType: "Online",
+    isPaid: true,
+    date: new Date().toLocaleDateString(),
+    amount: 0.99 * 6 + 3.5 * 1,
   },
   {
-    _id: "67e2589a8f87e63366787004",
-    name: "Potato",
-    description: "Farm fresh potatoes, ideal for everyday cooking.",
-    price: 1.0,
-    category: "Vegetables",
-    stock: 200,
-    imageUrl: potato1,
-    paymentType: 'COD'
+    _id: "order004",
+    items: [
+      { name: "Cola Drink", price: 1.5, quantity: 4, imageUrl: cocolo1 },
+    ],
+    customerName: "Amit Singh",
+    phone: "9988776655",
+    address: "MG Road, Patna, Bihar",
+    paymentType: "COD",
+    isPaid: false,
+    date: new Date().toLocaleDateString(),
+    amount: 1.5 * 4,
   },
-  {
-    _id: "67e2589a8f87e63366787005",
-    name: "Milk",
-    description: "Pure cow milk, full of calcium and protein.",
-    price: 0.99,
-    category: "Dairy",
-    stock: 60,
-    imageUrl: onion1,
-    paymentType: 'COD'
-  },
-  {
-    _id: "67e2589a8f87e63366787006",
-    name: "Cheese",
-    description: "Delicious cheddar cheese, perfect for sandwiches and cooking.",
-    price: 3.5,
-    category: "Dairy",
-    stock: 40,
-    imageUrl: carrot1,
-    paymentType: 'Online'
-  },
-  {
-    _id: "67e2589a8f87e63366787007",
-    name: "Cola Drink",
-    description: "Refreshing carbonated soft drink, 500ml bottle.",
-    price: 1.5,
-    category: "Soft Drink",
-    stock: 120,
-    imageUrl: pepsi1,
-    paymentType: 'COD'
-  },
-]
-
-
+];
 
 
 export default asserts;
+

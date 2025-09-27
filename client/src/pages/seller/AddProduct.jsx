@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import asserts from '../../assets/assets';
+import toast from 'react-hot-toast';
 
 function AddProduct() {
 
@@ -12,7 +13,13 @@ function AddProduct() {
 
     let onSubmitHandler= async(e)=>{
         e.preventDefault();
-        alert("Added")
+        toast.success('Product Added');
+        setFiles([]);
+        setName('');
+        setDescription('');
+        setCategory('');
+        setPrince('');
+        setOfferPrince('');
     }
   return (
     <div className="flex flex-col justify-between bg-transparent trxt-black dark:text-white">
@@ -21,15 +28,15 @@ function AddProduct() {
                     <p className="text-base font-medium">Product Image</p>
                     <div className="flex flex-wrap items-center gap-3 mt-2">
                         {Array(4).fill('').map((_, index) => (
-                            <label key={index} htmlFor={`image${index}`} className='shadow-2xl rounded-md'>
+                            <label key={index} htmlFor={`image${index}`} className='shadow-2xl rounded-full'>
                                 <input onChange={(e)=>{
                                     const updatedFiles=[...files];
                                     updatedFiles[index]=e.target.files[0];
                                     setFiles(updatedFiles);
                                 }} accept="image/*" type="file" id={`image${index}`} hidden required />
                                 {files[index] 
-                                ? <img className="w-24" src={URL.createObjectURL(files[index])} alt="uploadArea" width={100} height={100} /> 
-                                : <i className="fa-solid fa-arrow-up-from-bracket text-[50px] text-black dark:text-white w-24 cursor-pointer"></i>}
+                                ? <img className="w-24 h-24 rounded-full" src={URL.createObjectURL(files[index])} alt="uploadArea" /> 
+                                : <div className='w-24 h-24 border-2 dark:border-white border-gray-500/40 rounded-full cursor-pointer flex items-center justify-center'><i className="fa-solid fa-arrow-up-from-bracket text-xl text-[#0000009f] dark:text-[#ffffff92]"></i></div>}
                             </label>
                         ))}
                     </div>

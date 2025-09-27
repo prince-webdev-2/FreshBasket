@@ -51,7 +51,7 @@ const Cart = () => {
                     <div key={index} className="grid grid-cols-[2fr_1fr_1fr] text-gray-500 items-center text-sm md:text-base font-medium py-3  sm:hover:bg-[#ccc] px-2 duration-300 rounded-xl group border-2 dark:border-[white] border-[black] mb-3">
                         <div className="flex items-center md:gap-6 gap-3">
                             <div className="cursor-pointer w-24 h-24 flex items-center justify-center rounded-full overflow-hidden">
-                                <img className="max-w-full h-full object-cover rounded-full" src={product.image} alt={product.name} onClick={()=>navigate(`/products/${product.category.toLowerCase()}/${product._id}`)} />
+                                <img className="max-w-full h-full object-cover rounded-full" src={product.image[0]} alt={product.name} onClick={()=>navigate(`/products/${product.category.toLowerCase()}/${product._id}`)} />
                             </div>
                             <div>
                                 <p className="hidden md:block font-semibold group-hover:text-black">{product.name}</p>

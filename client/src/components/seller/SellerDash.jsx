@@ -59,7 +59,7 @@ const SellerDash = ({theme, setTheme}) => {
                                 <p className="md:block hidden text-center">{item.name}</p>
                         </NavLink>
                         ))}
-                        <button className='sm:hidden text-lg text-black dark:text-white cursor-pointer' onClick={logout}><i className="fa-solid fa-power-off"></i></button>
+                        <button className='sm:hidden text-xl text-[red] dark:text-white cursor-pointer' onClick={logout}><i className="fa-solid fa-power-off fixed bottom-[3rem] left-5"></i></button>
                 </div>
                 <div className="w-[80%] sm:w-[75%] lg:w-[85%] lg:px-10 bg-transparent h-[85vh] lg:h-[80vh] overflow-y-auto">    
                         <Outlet />
